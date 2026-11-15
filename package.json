@@ -1,7 +1,7 @@
 {
-  "name": "ascii-animals",
-  "version": "0.1.0",
-  "private": true,
+  "name": "ascii-animals-newtab",
+  "version": "1.0.0",
+  "description": "Breathtaking ASCII animals crossing your new tab screen with liquid glass UI, quick search, interactive shortcuts, and 8 animated species.",
   "license": "MIT",
   "type": "module",
   "main": "src/index.ts",

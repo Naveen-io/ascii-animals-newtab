@@ -9,7 +9,7 @@
       if (/Chrome\//.test(navigator.userAgent)) document.documentElement.classList.add("liquid");
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono:wght@600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/page.css" />
   </head>
   <body>
@@ -24,10 +24,6 @@
       </filter>
     </svg>
 
-    <div class="top-bar">
-      <div class="choices glass" role="radiogroup" aria-label="Animal"></div>
-    </div>
-
     <main class="stage">
       <!-- Dia's mark, cut out of a screenshot (a concept redesign, not affiliated with Dia). -->
       <div class="masthead">
@@ -40,15 +36,9 @@
             <circle cx="10.5" cy="10.5" r="6.5" />
             <path d="m15.5 15.5 5 5" />
           </svg>
-          <textarea name="prompt" rows="1" placeholder="Ask anything..." aria-label="Ask anything"></textarea>
+          <textarea name="prompt" rows="1" placeholder="Search Google or ask anything..." aria-label="Search or ask anything"></textarea>
         </div>
         <div class="composer-bar">
-          <button type="button" class="pill">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-              <path d="M12 5v14M5 12h14" />
-            </svg>
-            <span>Add tabs or files</span>
-          </button>
           <div class="tools">
             <button type="button" class="icon-btn" aria-label="Voice input">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -64,6 +54,7 @@
           </div>
         </div>
       </form>
+      <div class="shortcuts-row" aria-label="Shortcuts"></div>
     </main>
 
     <script type="module" src="/demo.ts"></script>

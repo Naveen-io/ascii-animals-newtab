@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ascii animals · compare</title>
+    <title>ascii animals · candidate lab</title>
     <script>
       if (/Chrome\//.test(navigator.userAgent)) document.documentElement.classList.add("liquid");
     </script>
@@ -11,6 +11,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono:wght@600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/page.css" />
     <style>
+      .nav-top {
+        position: fixed;
+        top: 18px;
+        left: 20px;
+        z-index: 40;
+      }
+      .nav-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        height: 36px;
+        padding: 0 16px;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--text-soft);
+        text-decoration: none;
+        cursor: pointer;
+        transition: color 0.2s, transform 0.15s;
+      }
+      .nav-btn:hover {
+        color: var(--text);
+        transform: translateY(-1px);
+      }
       .bars {
         position: fixed;
         top: 18px;
@@ -20,32 +44,82 @@
         flex-direction: column;
         align-items: center;
         gap: 8px;
+        z-index: 30;
       }
       .bars .glass { position: relative; }
       .choices.ideas b { font: 600 12px "Geist Mono", ui-monospace, monospace; margin-right: 6px; }
-      .note {
+      
+      .footer-controls {
         position: fixed;
         left: 50%;
         bottom: 22px;
         translate: -50% 0;
-        max-width: min(640px, calc(100vw - 40px));
-        padding: 10px 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        z-index: 30;
+        max-width: min(680px, calc(100vw - 40px));
+      }
+      .note {
+        margin: 0;
+        padding: 10px 18px;
         border-radius: 16px;
         text-align: center;
         font-size: 13px;
         color: var(--text-soft);
         pointer-events: none;
+        line-height: 1.5;
       }
-      .note kbd { font: 600 11px "Geist Mono", ui-monospace, monospace; color: var(--muted); }
+      .note kbd { font: 600 11px "Geist Mono", ui-monospace, monospace; color: var(--muted); margin-left: 6px; }
+
+      .candidate-act-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        height: 34px;
+        padding: 0 18px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid var(--glass-edge);
+        cursor: pointer;
+        transition: background 0.2s, transform 0.15s, border-color 0.2s;
+      }
+      .candidate-act-btn:hover {
+        background: rgba(255, 255, 255, 0.16);
+        transform: translateY(-1px);
+      }
+      .candidate-act-btn.active {
+        background: rgba(122, 162, 255, 0.2);
+        border-color: rgba(122, 162, 255, 0.5);
+        color: #b0c8ff;
+      }
     </style>
   </head>
   <body>
     <canvas aria-hidden="true"></canvas>
+
+    <div class="nav-top">
+      <a href="/index.html" class="nav-btn glass" title="Back to New Tab">
+        <span>← New Tab</span>
+      </a>
+    </div>
+
     <div class="bars">
       <div class="choices sets glass" role="radiogroup" aria-label="Animal"></div>
       <div class="choices ideas glass" role="radiogroup" aria-label="Option"></div>
     </div>
-    <p class="note glass"></p>
+
+    <div class="footer-controls">
+      <button type="button" class="candidate-act-btn glass" id="btn-select-active">
+        <span>Select as New Tab Default</span>
+      </button>
+      <p class="note glass"></p>
+    </div>
+
     <script type="module" src="/compare.ts"></script>
   </body>
 </html>

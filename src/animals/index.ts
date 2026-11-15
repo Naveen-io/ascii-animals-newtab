@@ -6,6 +6,7 @@ import { dragonflies } from "./dragonflies";
 import { frogs } from "./frogs";
 import { jellyfish } from "./jellyfish";
 import { koi } from "./koi";
+import { manta } from "./manta";
 
 /** Every animal, in the order the choices show them. */
 export const ANIMALS = {
@@ -16,6 +17,7 @@ export const ANIMALS = {
   frogs,
   cranes,
   crabs,
+  manta,
 } satisfies Record<string, Animal<any>>;
 
 export type AnimalKey = keyof typeof ANIMALS;
